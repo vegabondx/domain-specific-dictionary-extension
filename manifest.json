@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Domain Specific Dictionary",
+    "description": "Save abbreviations",
+    "version": "0.1",
+    "icons": {
+        "16": "WebPage/search.png"
+    },
+    "action": {
+        "default_popup": "WebPage/index.html"
+    },
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage",
+        "alarms"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+      }
+}
