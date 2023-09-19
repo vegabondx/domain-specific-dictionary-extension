@@ -1,5 +1,4 @@
-import { getDefinition } from "./WebPage/lf-operations.js";
-
+// import { getDefinition } from "./WebPage/lf-operations.js";
 
 chrome.contextMenus.create({
     id: "test",

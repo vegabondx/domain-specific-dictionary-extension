@@ -1,5 +1,5 @@
 export {getDefinition,addDefinition,deleteDefinition}
-import "../lib/localforage"
+import "../lib/localforage.js"
 
 
 const DefinitionTable = localforage.createInstance({
