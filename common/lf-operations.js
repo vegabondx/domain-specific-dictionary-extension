@@ -9,7 +9,7 @@ const DefinitionTable = localforage.createInstance({
 
 async function addDefinition(abbr, definition) {
     try {
-        await DefinitionTable.setItem(abbr, definition);
+        await DefinitionTable.setItem(abbr.toUpperCase().trim(), definition);
         alert('abbreviation added sucessfully');
     } catch (err) {
         console.log(err.message);
@@ -19,11 +19,8 @@ async function addDefinition(abbr, definition) {
 
 async function getDefinition(key) {
     try {
-        const value = await DefinitionTable.getItem(key);
-        return {
-            key: key,
-            definition: value
-        };
+        const value = await DefinitionTable.getItem(key.toUpperCase().trim());
+        return value
     } catch (err) {
         console.log(err);
     }
@@ -31,7 +28,7 @@ async function getDefinition(key) {
 
 async function deleteDefinition(e) {
     try {
-        await DefinitionTable.removeItem(e);
+        await DefinitionTable.removeItem(e.toUpperCase().trim());
         alert('Contact deleted succesfully');
     } catch (err) {
         console.log(err.message);

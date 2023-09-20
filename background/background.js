@@ -4,7 +4,7 @@ function searchDs(info) {
         console.log(info.selectionText)
         getDefinition(info.selectionText)
         .then(
-            value => alert(value.definition))
+            definition => alert(definition))
     }
 
 chrome.contextMenus.create({

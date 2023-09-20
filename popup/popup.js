@@ -6,8 +6,8 @@ import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-opera
 
 async function showDefinitions(key) {
     try {
-        const pair = await getDefinition(key)
-        document.getElementById('output').innerHTML = `<center>${pair.definition}</center>`;
+        const definition = await getDefinition(key)
+        document.getElementById('output').innerHTML = `<center>${definition}</center>`;
     } catch (err) {
         console.log(err);
     }
