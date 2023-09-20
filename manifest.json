@@ -15,5 +15,7 @@
         "storage",
         "alarms"
     ],
-    "background": {"scripts":["background.js"]}
+    "background": {
+        "page":"background/background.html"
+    }
 }
