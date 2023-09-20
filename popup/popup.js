@@ -7,25 +7,7 @@ import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-opera
 async function showDefinitions(key) {
     try {
         const pair = await getDefinition(key)
-        let newContact = `<tr>
-                                <td>${pair.key}</td>
-                                <td>${pair.definition}</td>
-                                </tr>`;
-        document.getElementById('table').innerHTML = 
-        `
-        <table>
-          <thead>
-            <tr>
-              <th>Abbreviation</th>
-              <th>Definition</th>
-            </tr>
-          </thead>
-          <tbody>
-          `+newContact+`
-          </tbody>
-        </table>
-        `
-        // document.querySelector('tbody').insertAdjacentHTML('afterbegin', newContact);
+        document.getElementById('output').innerHTML = `<center>${pair.definition}</center>`;
     } catch (err) {
         console.log(err);
     }
@@ -39,7 +21,7 @@ document.getElementById('submit').addEventListener('click', async (e) => {
     await addDefinition(word, definition);
 })
 
-document.getElementById('get').addEventListener('click', async (e) => {
-    const word = document.getElementById("lookup").value
+document.getElementById('lookup').addEventListener('click', async (e) => {
+    const word = document.getElementById("abbr").value
     showDefinitions(word)
 })
