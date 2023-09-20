@@ -2,7 +2,7 @@
 /* https://blog.logrocket.com/localforage-managing-offline-browser-storage/  
 */
 
-import { getDefinition, addDefinition, deleteDefinition } from "./lf-operations.js"
+import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-operations.js"
 
 async function showDefinitions(key) {
     try {
