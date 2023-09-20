@@ -1,17 +1,24 @@
 import { getDefinition } from "/common/lf-operations.js";
 
-chrome.contextMenus.create({
-    id: "dict",
-    title: "Search %s in DSDict", 
-    contexts:["selection"]
-    }
-);
-
-chrome.contextMenus.onClicked.addListener(function(info){
-    if (info.menuItemId == "dict"){
+function searchDs(info) {
         console.log(info.selectionText)
         getDefinition(info.selectionText)
         .then(
             value => alert(value.definition))
     }
-    });
+
+chrome.contextMenus.create({
+    id: "dict",
+    title: "Search '%s' in", 
+    contexts:["selection"]
+    }
+);
+
+chrome.contextMenus.create({
+    id: "local",
+    parentId: "dict",
+    title: "Domain Specific", 
+    contexts:["selection"],
+    onclick: searchDs
+    }
+);
