@@ -36,7 +36,7 @@ chrome.contextMenus.create({
 chrome.contextMenus.create({
     id: "search",
     parentId: "dict",
-    title: "Search", 
+    title: "Search for abbr '%s'", 
     contexts:["selection"],
     onclick: searchDs
     }
@@ -45,7 +45,7 @@ chrome.contextMenus.create({
 chrome.contextMenus.create({
     id: "setDefinition",
     parentId: "dict",
-    title: "Edit entry for %s", 
+    title: "Edit definition for '%s'", 
     contexts:["selection"],
     onclick: setDs
 }
@@ -54,7 +54,7 @@ chrome.contextMenus.create({
 chrome.contextMenus.create({
     id: "setAbbr",
     parentId: "dict",
-    title: "Add entry for Definition %s", 
+    title: "Add abbr for definition '%s'", 
     contexts:["selection"],
     onclick: setAbbr
 }
