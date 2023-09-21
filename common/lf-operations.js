@@ -12,20 +12,21 @@ function clean(abbr) {
 
 async function addDefinition(abbr, definition) {
     try {
+        if(definition){
         await DefinitionTable.setItem(clean(abbr), definition);
-        alert('abbreviation added sucessfully');
+        console.log('Abbreviation added sucessfully to Domain dictionary');}
+        else {alert('No definition provided')}
     } catch (err) {
         console.log(err.message);
     }
 }
 
-
 async function getDefinition(key) {
     try {
         const value = await DefinitionTable.getItem(clean(key));
-        return value
+        return value || ""
     } catch (err) {
-        console.log(err);
+        console.log(err.message);
     }
 }
 

@@ -1,22 +1,29 @@
 import { getDefinition, addDefinition } from "/common/lf-operations.js";
 
+
 function searchDs(info) {
-        console.log(info.selectionText)
-        getDefinition(info.selectionText)
+        const st = info.selectionText
+        console.log("Searching for "+st)
+        getDefinition(st)
         .then(
-            definition => alert(definition))
+            definition => alert(st+" => "+definition))
     }
 
 function setDs(info) {
-        console.log(info.selectionText)
-        let definition= prompt("Please enter definition:")
-        addDefinition(info.selectionText,definition)
+        const st = info.selectionText
+        console.log("Trying to setting definition for "+st)
+        getDefinition(st).then( defaultval =>{
+        var definition= prompt("Please enter/edit definition for '"+st+"':",defaultval);
+        addDefinition(st,definition)
+        }
+        )
     }
 
 function setAbbr(info) {
-        console.log(info.selectionText)
-        let abbr= prompt("Please enter abbreviation:")
-        addDefinition(abbr,info.selectionText)
+        const st = info.selectionText
+        console.log("setting abbreviation for "+st)
+        let abbr= prompt("Please enter abbreviation for'"+st+"':")
+        addDefinition(abbr,st)
     }
 
 chrome.contextMenus.create({
