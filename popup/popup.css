@@ -118,3 +118,9 @@ th {
     color: darkgreen;
     font-style: bold;
 }
+
+.button-container {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+  }
