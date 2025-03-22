@@ -108,3 +108,13 @@ th {
     width: auto;
     margin-top: 15px;
 }
+
+.box {
+    width: 300px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    color: darkgreen;
+    font-style: bold;
+}
