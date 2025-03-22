@@ -30,7 +30,21 @@ document.getElementById('lookup').addEventListener('click', async (e) => {
 document.getElementById('abbr').addEventListener('keydown', async (e) => {
     if (e.key === 'Enter') {
         e.preventDefault();
-        const word = e.target.value;
+        const word = document.getElementById("abbr").value;
         showDefinitions(word);
+        }
     }
-});
+);
+
+document.getElementById('definition').addEventListener('keydown', async (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        const word = document.getElementById("abbr").value;
+        const definition = document.getElementById("definition").value;
+        if ( word && definition){
+        await addDefinition(word, definition);
+        showDefinitions(word);      
+        }
+    }
+}
+);
