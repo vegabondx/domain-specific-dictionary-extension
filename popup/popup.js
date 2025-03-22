@@ -25,3 +25,12 @@ document.getElementById('lookup').addEventListener('click', async (e) => {
     const word = document.getElementById("abbr").value
     showDefinitions(word)
 })
+
+// Add event listener for Enter key
+document.getElementById('abbr').addEventListener('keydown', async (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        const word = e.target.value;
+        showDefinitions(word);
+    }
+});
