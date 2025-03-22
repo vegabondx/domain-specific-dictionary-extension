@@ -1,69 +1,110 @@
-body{
-    font-family: arial, sans-serif;
+body {
+    font-family: Arial, sans-serif;
     padding: 10px;
-    position: relative;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-button{
+button {
     cursor: pointer;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
     justify-content: center;
     align-items: center;
 }
 
-.form button{
-    background-color: blue;
-    width: 100px;
-    color: #fff;
+button:hover {
+    background-color: #0056b3;
 }
 
-.form label{
-    margin-bottom: 10px;
-    width: 100%;
+html
+{
+    width: 400px;  /* max: 800px */
+    height: 300px; /* max: 600px */
+}
+.form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form input {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form button {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
 
 table {
-    margin-top: 50px;
+    margin-top: 15px;
     border-collapse: collapse;
-    width: 600px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
     text-align: left;
-    padding: 8px;
+    padding: 10px;
 }
 
-#modal{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: none;
+th {
+    background-color: #007bff;
+    color: #fff;
 }
 
-#modal .backdrop{
-    background-color: rgba(43, 40, 40, 0.5);
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-#modal .form{
+#modal .form {
     background-color: #fff;
-    padding: 40px;
-    border: 1px solid blue;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#modal .form button {
+    width: auto;
+    margin-top: 15px;
 }
