@@ -61,11 +61,4 @@ The extension requires the following permissions:
 1. Make changes to the source files as needed.
 2. Reload the extension in `chrome://extensions/` to apply changes.
 
-### Docker Support
-A basic `Dockerfile` and `docker-compose.yaml` are included for serving static files (e.g., for testing the popup interface).
-
-To run:
-```bash
-docker-compose up
-
 
