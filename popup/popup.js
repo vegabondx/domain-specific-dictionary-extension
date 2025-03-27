@@ -48,3 +48,15 @@ document.getElementById('definition').addEventListener('keydown', async (e) => {
     }
 }
 );
+
+/* Implementation for V2 like functionality
+// Listen for messages from the webpage or other parts of the extension
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === 'showPopup') {
+        const outputElement = document.getElementById('output');
+        outputElement.innerHTML = `<center>${message.content}</center>`;
+        console.log("Message received:", message.content);
+        sendResponse({ status: "Message displayed in popup" });
+    }
+});
+*/

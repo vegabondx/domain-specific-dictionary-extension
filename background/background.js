@@ -1,20 +1,5 @@
 import { getDefinition, addDefinition } from "/common/lf-operations.js";
 
-
-async function openPopup(url) {
-    const popupWidth = 400;
-    const popupHeight = 400;
-
-    // Open extension as popu
-     chrome.windows.create({
-      url, 
-      type: 'popup', 
-      width: popupWidth, 
-      height: popupHeight,
-    });
-
-}
-
 function showPopupMessage(message,tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
@@ -27,10 +12,10 @@ function showPopupMessage(message,tabId) {
 function searchDs(info, tabId) {
     const st = info.selectionText;
     console.log("Searching for " + st);
-    getDefinition(st).then(definition => showPopupMessage(st + " => " + definition, tabId));
+    getDefinition(st).then(definition =>showPopupMessage(definition,tabId));
 }
 
-/* 
+/* V2 NOT IMPLEMENTED
 function setDs(info) {
     const st = info.selectionText;
     console.log("Trying to set definition for " + st);
@@ -62,6 +47,7 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ["selection"]
     });
 
+    /* V2 NOT IMPLEMENTED
     chrome.contextMenus.create({
         id: "setDefinition",
         parentId: "dict",
@@ -75,17 +61,21 @@ chrome.runtime.onInstalled.addListener(() => {
         title: "Add abbr for definition '%s'",
         contexts: ["selection"]
     });
+    */
 });
 
 chrome.contextMenus.onClicked.addListener((data, tab) => {
     if (data.menuItemId === "search") {
         searchDs(data,tab.id);
         console.log("Search clicked:", data.selectionText);
-    } else if (data.menuItemId === "setDefinition") {
+    } 
+    /* V2 NOT IMPLEMENTED in V3
+    else if (data.menuItemId === "setDefinition") {
         openPopup("../popup/popup.html");
         console.log("Set Definition clicked:", data.selectionText);
     } else if (data.menuItemId === "setAbbr") {
         openPopup("../popup/popup.html");
         console.log("Set Abbr clicked:", data.selectionText);
     }
+    */        
 });
