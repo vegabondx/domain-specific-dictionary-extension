@@ -1,0 +1,27 @@
+{
+  "name": "domain-specific-dictionary-extension",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A Chrome extension to save, manage, and look up abbreviations and their definitions.",
+  "main": "background/background.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'No build step defined'",
+    "start": "echo 'Load the extension in Chrome via chrome://extensions/'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "dictionary",
+    "abbreviations",
+    "localforage"
+  ],
+  "author": "Abhijit",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "dependencies": {
+    "localforage": "^1.10.0",
+    "nvm": "0.0.4"
+  }
+}
