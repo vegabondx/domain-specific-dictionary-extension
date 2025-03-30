@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>File Loader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="form">
+    <label><span>Upload CSV:</span>
+      <input id="csvFile" type="file" accept=".csv">
+    </label>
+    <button type="button" id="uploadCsv">Upload CSV</button>
+  </div>
+  <script src="../lib/localforage.js"></script>
+  <script src="fileLoader.js" type="module"></script>
+</body>
+
+</html>

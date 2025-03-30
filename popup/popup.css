@@ -109,9 +109,32 @@ th {
     margin-top: 15px;
 }
 
-
 .button-container {
     display: flex;
     margin: 10px;
     justify-content: space-between;
-  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-top: 10px;
+  float: right;
+}
+
+.error-container {
+  position: flex;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  color: #721c24;
+  padding: 2px;
+  font-size: 10px;
+  font-style: italic;
+  text-align: center;
+}
+
+.error-container.hidden {
+  display: none;
+}

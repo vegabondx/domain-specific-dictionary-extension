@@ -5,13 +5,14 @@
 import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-operations.js"
 
 async function showDefinitions(key) {
-    try {
-        const definition = await getDefinition(key)
+
+    const definition = await getDefinition(key)
+    if(definition && definition!="")
         document.getElementById('definition').value = definition;
-    } catch (err) {
-        console.log(err);
-    }
-}
+    else {
+        document.getElementById('error-container').classList.remove('hidden'); 
+        document.getElementById('error-container').textContent = "no definition found for"+key }}
+
 
 document.getElementById('save').addEventListener('click', async (e) => {
     e.preventDefault();
@@ -59,3 +60,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 */
+
+document.getElementById('openFileLoader').addEventListener('click', () => {
+    // Open fileLoader.html in a new popup window
+    window.open(
+        'fileLoader.html', // Path to the file loader HTML
+        'FileLoader', // Name of the popup window
+        'width=400,height=200,top=100,left=100' // Window size and position
+    );
+});
