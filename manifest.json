@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Domain Specific Dictionary",
     "description": "Save abbreviations",
-    "version": "0.3",
+    "version": "0.4",
     "icons": {
         "16": "icons/search.png"
     },

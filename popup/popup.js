@@ -7,7 +7,6 @@ import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-opera
 async function showDefinitions(key) {
 
     const definition = await getDefinition(key)
-    document.getElementById('definition').value = definition;
     if(definition && definition!="")
         document.getElementById('definition').value = definition;
     else {
