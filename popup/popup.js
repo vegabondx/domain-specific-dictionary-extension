@@ -5,13 +5,15 @@
 import { getDefinition, addDefinition, deleteDefinition } from "/common/lf-operations.js"
 
 async function showDefinitions(key) {
-    try {
-        const definition = await getDefinition(key)
+
+    const definition = await getDefinition(key)
+    document.getElementById('definition').value = definition;
+    if(definition && definition!="")
         document.getElementById('definition').value = definition;
-    } catch (err) {
-        console.log(err);
-    }
-}
+    else {
+        document.getElementById('error-container').classList.remove('hidden'); 
+        document.getElementById('error-container').textContent = "no definition found for"+key }}
+
 
 document.getElementById('save').addEventListener('click', async (e) => {
     e.preventDefault();
