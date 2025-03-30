@@ -3,23 +3,24 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Simple Dictionary Template</title>
+  <title>Domain Specific Dictionary</title>
   <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
   <div class="form">
     <label><span>Abbreviation:</span>
-      <input id="abbr" type="text" name='abbr' value="">
+      <input id="abbr" type="text" name="abbr" value="">
     </label>
-    <label><span>Definition  :</span>
-      <input id="definition" type="text" name='definition' value="">
+    <label><span>Definition:</span>
+      <input id="definition" type="text" name="definition" value="">
     </label>
     <div class="button-container">
-      <button type="submit" id="save"> Save </button>
-      <button type="button" id="lookup"> Lookup </button>
-    </div>
-  </div>
+      <button type="submit" id="save">Save</button>
+      <button type="button" id="lookup">Lookup</button>
+    <img id="openFileLoader" src="../icons/load-csv-icon.png" alt="Load CSV" title="Load CSV" class="icon">
   <script src="../lib/localforage.js"></script>
   <script src="popup.js" type="module"></script>
 </body>
+
 </html>

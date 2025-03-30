@@ -109,9 +109,16 @@ th {
     margin-top: 15px;
 }
 
-
 .button-container {
     display: flex;
     margin: 10px;
     justify-content: space-between;
-  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-top: 10px;
+  float: right;
+}

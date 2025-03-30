@@ -59,3 +59,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 */
+
+document.getElementById('openFileLoader').addEventListener('click', () => {
+    // Open fileLoader.html in a new popup window
+    window.open(
+        'fileLoader.html', // Path to the file loader HTML
+        'FileLoader', // Name of the popup window
+        'width=400,height=200,top=100,left=100' // Window size and position
+    );
+});
